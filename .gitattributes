@@ -1,0 +1,4 @@
+/src/data/acm/acm_sub_subgraph.npz filter=lfs diff=lfs merge=lfs -text
+/src/data/dblp/APA_CC.npz filter=lfs diff=lfs merge=lfs -text
+/src/data/yelp/bus_largest_cc.npz filter=lfs diff=lfs merge=lfs -text
+/src/data/yelp2/yelp_bus_2.npz filter=lfs diff=lfs merge=lfs -text
