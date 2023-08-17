@@ -116,7 +116,7 @@ class GCN(torch.nn.Module):
         """
         super().__init__()
         # seed used so this model trains the same way everytime
-        torch.manual_seed(1234567)
+        # torch.manual_seed(1234567)
         self.layers = []
         self.lr = lr
         self.weight_decay = weight_decay
@@ -140,7 +140,7 @@ class GCN(torch.nn.Module):
             x = conv(x, edge_index)
             if i != len(self.layers) - 1:
                 x = x.relu()
-                x = F.dropout(x, p=0, training=self.training)
+                x = F.dropout(x, p=0.5, training=self.training)
 
         return F.softmax(x, dim=1)
 
@@ -210,7 +210,6 @@ def test(model, input_data, mask, eval_func=distance.chebyshev, latent_features=
             out = model(latent_features, input_data.edge_index)
     length = int(mask.sum())
     distance = 0
-    #
     # print("predicted")
     # print(out[mask])
     predicted_argmax = torch.argmax(out[mask], dim=1)
@@ -218,19 +217,17 @@ def test(model, input_data, mask, eval_func=distance.chebyshev, latent_features=
     # print(predicted_argmax)
     # print("original")
     # print(input_data.y[mask])
-    #
     orig_arg = torch.argmax(input_data.y[mask], dim=1)
     # print(orig_arg)
-    print(sum(orig_arg == predicted_argmax) / predicted_argmax.shape[0])
+    print(f"Acc:{sum(orig_arg == predicted_argmax) / predicted_argmax.shape[0]}")
     print(f'F1 Score: {sklearn.metrics.f1_score(orig_arg.cpu().detach().numpy(), predicted_argmax.cpu().detach().numpy(), average="weighted")}')
-
     kl_loss = torch.nn.KLDivLoss(reduction="batchmean")
-    # print(f"KL Loss: {kl_loss((out[mask]).log(), input_data.y[mask])}")
+    print(f"KL Loss: {kl_loss((out[mask]).log(), input_data.y[mask])}")
     for i in range(mask.size(dim=0)):
         if mask[i]:
             distance += eval_func(input_data.y[i].cpu().detach().numpy(), out[i].cpu().detach().numpy())
     # print(out[:10])
-    # print("test eps:",distance/length)
+    print("test eps:",distance/length)
     return distance/length
 
 
