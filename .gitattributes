@@ -3,6 +3,10 @@
 /src/data/yelp/bus_largest_cc.npz filter=lfs diff=lfs merge=lfs -text
 /src/data/yelp2/yelp_bus_2.npz filter=lfs diff=lfs merge=lfs -text
 *.mat filter=lfs diff=lfs merge=lfs -text
+LDL/yelp2_50.mat filter=lfs diff=lfs merge=lfs -text
+LDL/yelp_50.mat filter=lfs diff=lfs merge=lfs -text
+LDL/dblp_50.mat filter=lfs diff=lfs merge=lfs -text
+LDL/acm_50.mat filter=lfs diff=lfs merge=lfs -text
 /LDL/acm50.mat filter=lfs diff=lfs merge=lfs -text
 /LDL/dblp50.mat filter=lfs diff=lfs merge=lfs -text
 /LDL/yelp2_50.mat filter=lfs diff=lfs merge=lfs -text
