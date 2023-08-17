@@ -4,7 +4,7 @@ visualize_data.py contains functions display_graph_stats and display_label_stats
 
 1. To reproduce the results in the paper, we have trained the model and saved the trained model. The trained model state is in the ./src/trained_model/ directory in a zip format. Please unzip the file and put them under the trained_model directory first.
 2. set up the environment following the requirements.txt
-3. For different datasets, run the following commands:
+3. For different datasets, run the following commands:\
 ACM:\
 GCN: python over_smothing.py --dataset acm --p 50 --hidden_channel 128 --num_layers 3 --patience 10 --lr 0.0001 --weight_decay 0.0005
 static: python quick_run.py --dataset acm --p 50 --lr 0.0001 --weight_decay 0.0005 --gcnhidden 320 --pgehidden 64 --freql 30 --freqv 50 --gcnvlayers 2 --gcnllayers 2 --pgelayers 3 --mode static --epochs 500 --patience 50
