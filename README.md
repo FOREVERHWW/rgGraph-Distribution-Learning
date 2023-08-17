@@ -32,14 +32,32 @@ dynamic:
 python quick_run.py --dataset dblp --p 50 --gcnhidden 300 --pgehidden 64 --freql 30 --freqv 20 --lr 0.0001 --weight_decay 0.0005 --gcnvlayers 2 --gcnllayers 2 --pgelayers 2 --mode dynamic --save 1 --epochs 500 --patience 20
 ~~~
 Yelp:\
-GCN:python over_smothing.py --dataset yelp2 --p 50 --hidden_channel 32 --num_layers 3 --patience 50 --lr 0.0001 --weight_decay 0.005\
-static: python quick_run.py --dataset yelp --p 50 --gcnhidden 64 --gcnvlayers 2 --gcnllayers 2 --freqv 20 --freql 60 --lr 0.0001 --weight_decay 0 --mode static --patience 20 --epochs 500\
-dynamic: python quick_run.py --dataset yelp --p 50 --gcnhidden 64 --pgehidden 32 --freql 60 --freqv 20 --lr 0.0001 --weight_decay 0.0005 --gcnvlayers 4 --gcnllayers 2 --pgelayers 2 --mode dynamic --epochs 500 --patience 20 --inner_epochs 50\
+GCN:
+~~~
+python over_smothing.py --dataset yelp2 --p 50 --hidden_channel 32 --num_layers 3 --patience 50 --lr 0.0001 --weight_decay 0.005
+~~~
+static: 
+~~~
+python quick_run.py --dataset yelp --p 50 --gcnhidden 64 --gcnvlayers 2 --gcnllayers 2 --freqv 20 --freql 60 --lr 0.0001 --weight_decay 0 --mode static --patience 20 --epochs 500
+~~~
+dynamic: 
+~~~
+python quick_run.py --dataset yelp --p 50 --gcnhidden 64 --pgehidden 32 --freql 60 --freqv 20 --lr 0.0001 --weight_decay 0.0005 --gcnvlayers 4 --gcnllayers 2 --pgelayers 2 --mode dynamic --epochs 500 --patience 20 --inner_epochs 50
+~~~
 
 
 Yelp2:\
-GCN: python over_smothing.py --dataset yelp2 --p 50 --hidden_channel 128 --num_layers 3 --patience 50 --lr 0.0001 --weight_decay 0.0005 --max_epochs 1000\
-static:python quick_run.py --dataset yelp2 --p 50 --gcnhidden 256 --pgehidden 64 --freql 60 --freqv 60 --lr 0.001 --weight_decay 0.0005 --gcnvlayers 4 --gcnllayers 1 --pgelayers 2 --mode static --epochs 500 --patience 50 --inner_epochs 50\
-dynamic: python quick_run.py --dataset yelp2 --p 50 --gcnhidden 320 --pgehidden 64 --freql 30 --freqv 60 --lr 0.0001 --weight_decay 0.0005 --gcnvlayers 3 --gcnllayers 2 --pgelayers 2 --mode dynamic --epochs 500 --patience 50 --inner_epochs 50\
+GCN: 
+~~~
+python over_smothing.py --dataset yelp2 --p 50 --hidden_channel 128 --num_layers 3 --patience 50 --lr 0.0001 --weight_decay 0.0005 --max_epochs 1000
+~~~
+static:
+~~~
+python quick_run.py --dataset yelp2 --p 50 --gcnhidden 256 --pgehidden 64 --freql 60 --freqv 60 --lr 0.001 --weight_decay 0.0005 --gcnvlayers 4 --gcnllayers 1 --pgelayers 2 --mode static --epochs 500 --patience 50 --inner_epochs 50
+~~~
+dynamic: 
+~~~
+python quick_run.py --dataset yelp2 --p 50 --gcnhidden 320 --pgehidden 64 --freql 30 --freqv 60 --lr 0.0001 --weight_decay 0.0005 --gcnvlayers 3 --gcnllayers 2 --pgelayers 2 --mode dynamic --epochs 500 --patience 50 --inner_epochs 50
+~~~
 
 
