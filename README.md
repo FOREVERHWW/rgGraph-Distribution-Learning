@@ -2,6 +2,8 @@
 
 visualize_data.py contains functions display_graph_stats and display_label_stats which are used to visualize the data generically or to visualize the label distributions of the data. To use either, create the dataset as a geo.data.Data() object, then pass it into the function. display_label_stats will also need an additional string that denotes the dataset's name.
 
+grid_search_dynamic.py provides a demo template for hyperparameter search of GLDL dynamic setting.
+single_run.py provides a demo for a single training case for GLDL.
 1. To reproduce the results in the paper, we have trained the model and saved the trained model. The trained model state is in the ./src/trained_model/ directory in a zip format. Please unzip the file and put them under the trained_model directory first.
 2. set up the environment following the requirements.txt
 3. For different datasets, run the following commands:
