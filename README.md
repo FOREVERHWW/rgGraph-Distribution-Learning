@@ -6,7 +6,7 @@ visualize_data.py contains functions display_graph_stats and display_label_stats
 2. set up the environment following the requirements.txt
 3. For different datasets, run the following commands:\
 ACM:\
-GCN:
+GCN:\
 """
 python over_smothing.py --dataset acm --p 50 --hidden_channel 128 --num_layers 3 --patience 10 --lr 0.0001 --weight_decay 0.0005\
 """
