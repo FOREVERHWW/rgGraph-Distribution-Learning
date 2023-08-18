@@ -112,10 +112,10 @@ elif args.p==60:
 else:
     print("error, no such masks")
 
-model_state = './trained_model/'+dataname+'/'+mode+'/'+dataname+'50.pt'
-adjfv_state = './trained_model/'+dataname+'/'+mode+'/'+dataname+'50_adjfv.npy'
-adjv_state = './trained_model/'+dataname+'/'+mode+'/'+dataname+'50_adjv.npy'
-fv_state = './trained_model/'+dataname+'/'+mode+'/'+dataname+'50_fv.npy'
+model_state = './trained_model/'+dataname+'/'+args.mode+'/'+dataname+'50.pt'
+adjfv_state = './trained_model/'+dataname+'/'+args.mode+'/'+dataname+'50_adjfv.npy'
+adjv_state = './trained_model/'+dataname+'/'+args.mode+'/'+dataname+'50_adjv.npy'
+fv_state = './trained_model/'+dataname+'/'+args.mode+'/'+dataname+'50_fv.npy'
 for index_mask in range(1):
     BESTVAL = 100
     count = 1
@@ -124,7 +124,7 @@ for index_mask in range(1):
     train_mask = torch.tensor(masks['train_mask'])
     val_mask = torch.tensor(masks['val_mask'])
     test_mask = torch.tensor(masks['test_mask'])
-    mugcn = MUGCN(homo_dblp,train_mask,val_mask,test_mask,args,device)
+    mugcn = MUGCN(homo,train_mask,val_mask,test_mask,args,device)
     #best_val_loss,epoch,fv,adjfv,adjv,gcnv = mugcn.train()
     gcnv = torch.load(model_state)
     fv = torch.tensor(np.load(fv_state)).to(device)
