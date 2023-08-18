@@ -2,7 +2,7 @@
 
 visualize_data.py contains functions display_graph_stats and display_label_stats which are used to visualize the data generically or to visualize the label distributions of the data. To use either, create the dataset as a geo.data.Data() object, then pass it into the function. display_label_stats will also need an additional string that denotes the dataset's name.
 
-The original LDL implementation mentioned in https://doi.org/10.48550/arXiv.1408.6027 is found in the LDL folder. To run, just change the load *datset* on line 18 of iislldDemo.m to which ever dataset you want to to run (acm50, yelp50, yelp2_50, dblp50). Run this file and it will return the results for LDL.
+The original LDL implementation mentioned in https://doi.org/10.48550/arXiv.1408.6027 is found in the LDL folder. To run, just change the load *dataset* on line 18 of iislldDemo.m to which ever dataset you want to to run (acm50, yelp50, yelp2_50, dblp50). Run this file and it will return the results for LDL.
 
 grid_search_dynamic.py provides a demo template for hyperparameter search of GLDL dynamic setting.
 single_run.py provides a demo for a single training case for GLDL.
