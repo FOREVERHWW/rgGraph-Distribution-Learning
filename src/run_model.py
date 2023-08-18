@@ -73,7 +73,7 @@ def run_model(model_data: geo.data.Data, hidden_channels=64, num_layers=3, lr=.0
     # send model to gpu if available
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
-    model.load_state_dict(model_path)
+    model.load_state_dict(torch.load(model_path))
     model_data.to(device)
 
     # graph evaluation metrics
