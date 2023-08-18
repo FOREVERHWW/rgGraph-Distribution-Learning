@@ -4,6 +4,8 @@ visualize_data.py contains functions display_graph_stats and display_label_stats
 
 The original LDL implementation mentioned in https://doi.org/10.48550/arXiv.1408.6027 is found in the LDL folder. To run, just change the load *dataset* on line 18 of iislldDemo.m to which ever dataset you want to to run (acm50, yelp50, yelp2_50, dblp50). Run this file and it will return the results for LDL.
 
+By default, all the gcn-based models(including our model) run under GPU setting. To use CPU mode, modify the device='cuda' to device='cpu' in the utils.py file and add additional args --gpu_id -1 when running the following commands.
+
 grid_search_dynamic.py provides a demo template for hyperparameter search of GLDL dynamic setting.
 single_run.py provides a demo for a single training case for GLDL.
 1. To reproduce the results in the paper, we have trained the model and saved the trained model. The trained model state is in the ./src/trained_model/ directory in a zip format. Please unzip the file and put them under the trained_model directory first.
