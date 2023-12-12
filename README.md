@@ -40,7 +40,7 @@ python quick_run.py --dataset dblp --p 50 --gcnhidden 300 --pgehidden 64 --freql
 Yelp\
 GCN:
 ~~~
-python over_smothing.py --dataset yelp2 --p 50 --hidden_channel 32 --num_layers 3 --patience 50 --lr 0.0001 --weight_decay 0.005
+python over_smothing.py --dataset yelp --p 50 --hidden_channel 32 --num_layers 3 --patience 50 --lr 0.0001 --weight_decay 0.005
 ~~~
 static: 
 ~~~
