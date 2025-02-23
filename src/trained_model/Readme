@@ -1,1 +1,0 @@
-Unzip the trained model for each dataset corresponding to 50 percent split and put them under trained_model directory(same place as the zip file).
